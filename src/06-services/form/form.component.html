@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+  <input placeholder="What next?" autofocus formControlName="text" />
+  <br />
+  <label>Completed:</label>
+  <input type="radio" [value]="true" formControlName="completed" /><label
+    >Yes</label
+  >
+  <input type="radio" [value]="false" formControlName="completed" /><label
+    >No</label
+  >
+  <br />
+  <button [disabled]="!form.valid">Add</button>
+</form>

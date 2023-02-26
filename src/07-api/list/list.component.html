@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let task of tasks | async; index as i">
+    <span
+      [class]="{ completed: task.completed }"
+      (click)="handleSpanClick(task)"
+      >{{ task.text }}</span
+    >
+    &nbsp;
+    <button (click)="handleButtonClick(task)">x</button>
+  </li>
+</ul>
