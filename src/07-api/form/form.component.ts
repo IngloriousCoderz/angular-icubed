@@ -20,7 +20,7 @@ export class FormComponent {
   }
 
   handleSubmit() {
-    this.tasksService.addTask(this.form.value);
+    this.tasksService.addTask(this.form.value).subscribe();
     this.form.reset(initialValues);
   }
 }

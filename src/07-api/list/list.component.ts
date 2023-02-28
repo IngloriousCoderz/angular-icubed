@@ -20,10 +20,10 @@ export class ListComponent implements OnInit {
   }
 
   handleSpanClick(task: Task) {
-    this.tasksService.toggleCompleted(task);
+    this.tasksService.toggleCompleted(task).subscribe();
   }
 
   handleButtonClick(task: Task) {
-    this.tasksService.removeTask(task);
+    this.tasksService.removeTask(task).subscribe();
   }
 }

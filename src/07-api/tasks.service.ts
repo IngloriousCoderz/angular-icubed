@@ -20,25 +20,22 @@ export class TasksService {
   }
 
   addTask(task: Partial<{ text: string | null; completed: boolean | null }>) {
-    this.http
+    return this.http
       .post<Task>('http://localhost:3000/tasks', task)
-      .pipe(tap(() => this.refetchSubect.next(null)))
-      .subscribe();
+      .pipe(tap(() => this.refetchSubect.next(null)));
   }
 
   toggleCompleted(task: Task) {
-    this.http
+    return this.http
       .patch<Task>(`http://localhost:3000/tasks/${task.id}`, {
         completed: !task.completed,
       })
-      .pipe(tap(() => this.refetchSubect.next(null)))
-      .subscribe();
+      .pipe(tap(() => this.refetchSubect.next(null)));
   }
 
   removeTask(task: Task) {
-    this.http
+    return this.http
       .delete<Task>(`http://localhost:3000/tasks/${task.id}`)
-      .pipe(tap(() => this.refetchSubect.next(null)))
-      .subscribe();
+      .pipe(tap(() => this.refetchSubect.next(null)));
   }
 }
