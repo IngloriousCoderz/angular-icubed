@@ -9,7 +9,7 @@ import { TasksService } from '../tasks.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  tasks!: Observable<Task[]>;
+  tasks$: Observable<Task[]> = this.tasksService.getTasks();
 
   constructor(private tasksService: TasksService) {}
 
@@ -17,8 +17,6 @@ export class ListComponent implements OnInit {
     // this.tasksService.getTasks().subscribe((tasks) => {
     //   this.tasks = tasks;
     // });
-
-    this.tasks = this.tasksService.getTasks();
   }
 
   handleSpanClick(index: number) {

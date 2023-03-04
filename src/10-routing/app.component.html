@@ -1,0 +1,23 @@
+<h1>Routing</h1>
+<nav>
+  <ul>
+    <li>
+      <a
+        routerLink="/home"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        [routerLink]="['/about', 'us']"
+        [queryParams]="{ name: 'world' }"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >About</a
+      >
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>

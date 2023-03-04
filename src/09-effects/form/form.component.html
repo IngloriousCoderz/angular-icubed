@@ -1,0 +1,9 @@
+<form (submit)="handleSubmit($event)">
+  <input
+    placeholder="What next?"
+    autofocus
+    [value]="text"
+    (change)="handleChange($event)"
+  />
+  <button>Add</button>
+</form>
